@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html class="dark-mode" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport"/>
+<title>ICDC — Integrating Civil Discourse into the Curriculum</title>
+<meta name="description" content="ICDC introduces a fundamentally new model for strengthening civil discourse in higher education by treating sound reasoning and civil dialogue as interdependent cognitive skills that must be taught together."/>
+<link rel="icon" href="https://webtheme.nd.edu/favicon.ico" />
+<link rel="apple-touch-icon" href="https://www.nd.edu/apple-touch-icon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
+  :root {
+    /* Notre Dame Brand Colors */
+    --nd-blue: #0c2340;
+    --nd-gold: #ae9142;
+    --nd-medium-blue: #143865;
+    --nd-bright-blue: #1c4f8f;
+    --nd-dark-gold: #8c7535;
+    --nd-bright-gold: #d39f10;
+    --nd-warm-white: #f8f4ec;
+    --nd-warm-cream: #efe9d9;
+    --nd-sky-blue-light: #edf2f9;
+    --nd-sky-blue-mid: #e1e8f2;
+
+    /* Dark mode (ND Blue based) */
+    --bg-color: #0a1628;
+    --card-bg: #0f1d30;
+    --card-header-bg: #132440;
+    --text-color: #f8f4ec;
+    --text-secondary: #b8c4d4;
+    --muted-text-color: #7a8a9e;
+    --border-color: #1e3a5f;
+    --primary-color: #d39f10;
+    --primary-glow: rgba(211, 159, 16, 0.15);
+    --link-color: #e8b84a;
+    --highlight-bg: rgba(211, 159, 16, 0.1);
+    --stat-bg: #0c1a2e;
+    --section-alt-bg: #06101c;
+    --accent-color: #1c4f8f;
+    --accent-glow: rgba(28, 79, 143, 0.2);
+  }
+
+  html.light-mode {
+    --bg-color: #f8f4ec;
+    --card-bg: #ffffff;
+    --card-header-bg: #edf2f9;
+    --text-color: #0c2340;
+    --text-secondary: #3a4d63;
+    --muted-text-color: #5a6a7e;
+    --border-color: #d1d9e6;
+    --primary-color: #0c2340;
+    --primary-glow: rgba(12, 35, 64, 0.08);
+    --link-color: #1c4f8f;
+    --highlight-bg: rgba(12, 35, 64, 0.05);
+    --stat-bg: #edf2f9;
+    --section-alt-bg: #e1e8f2;
+    --accent-color: #ae9142;
+    --accent-glow: rgba(174, 145, 66, 0.12);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.75;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+  }
+
+  html.light-mode .nav {
+    background-color: rgba(248, 244, 236, 0.96);
+  }
+
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-brand {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .nav-brand span {
+    color: var(--primary-color);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    list-style: none;
+  }
+
+  /* ND Academic Mark */
+  .nd-mark {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-left: 2rem;
+  }
+
+  .nd-mark img {
+    width: 200px;
+    height: auto;
+  }
+
+  .nd-mark-mobile {
+    display: none;
+  }
+
+
+  @media (max-width: 992px) {
+    .nd-mark img {
+      width: 160px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nd-mark {
+      display: none;
+    }
+    .nd-mark-mobile {
+      display: block;
+      width: 100%;
+      background: var(--nd-blue);
+      padding: 0.6rem 5vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 101;
+    }
+    .nd-mark-mobile img {
+      height: 24px;
+      width: auto;
+    }
+    .nav {
+      top: 44px;
+    }
+    .mobile-nav {
+      top: 108px;
+    }
+    .hero {
+      padding-top: 160px;
+    }
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+  .nav-links a.active {
+    color: var(--primary-color);
+    position: relative;
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 1px;
+  }
+
+  .nav-cta.active {
+    box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px var(--primary-color);
+  }
+
+  .nav-cta.active::after {
+    display: none;
+  }
+
+  .nav-cta {
+    background: var(--primary-color);
+    color: #fff !important;
+    padding: 0.55rem 1.3rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: all 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .container-narrow {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 140px 0 80px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .scroll-chevron {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--muted-text-color);
+    font-size: 1.6rem;
+    animation: chevron-bounce 2s ease-in-out infinite;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .scroll-chevron:hover {
+    color: var(--primary-color);
+  }
+
+  @keyframes chevron-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+    50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+  }
+
+  .hero-inner {
+    max-width: 820px;
+  }
+
+  .hero-tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--primary-color);
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 720px;
+  }
+
+  .hero-subtitle strong {
+    color: var(--text-color);
+    font-weight: 600;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(211, 159, 16, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(211, 159, 16, 0.45);
+  }
+
+  html.light-mode .btn-primary {
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(12, 35, 64, 0.25);
+  }
+
+  html.light-mode .btn-primary:hover {
+    box-shadow: 0 8px 28px rgba(12, 35, 64, 0.35);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+  }
+
+  .btn-outline:hover {
+    background: var(--primary-glow);
+    transform: translateY(-2px);
+  }
+
+  /* Sections */
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-alt {
+    background-color: var(--section-alt-bg);
+  }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-desc strong {
+    color: var(--text-color);
+    font-weight: 600;
+  }
+
+  /* Feature Cards */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.2rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 40px var(--primary-glow);
+    transform: translateY(-4px);
+  }
+
+  .feature-card-full {
+    grid-column: 1 / -1;
+  }
+
+  .feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--primary-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+  }
+
+  .feature-icon i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+
+  .feature-icon.accent {
+    background: var(--accent-glow);
+  }
+
+  .feature-icon.accent i {
+    color: var(--accent-color);
+  }
+
+  .feature-card h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Goals List */
+  .goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .goal-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.8rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .goal-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 40px var(--primary-glow);
+    transform: translateY(-4px);
+  }
+
+  .goal-number {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+
+  .goal-card h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .goal-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Stats Row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+
+  .stat-card {
+    background: var(--stat-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.6rem 1rem;
+    text-align: center;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .stat-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+  }
+
+  .stat-number {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Partners Section */
+  .partners-section {
+    margin-top: 2.5rem;
+  }
+
+  .partners-category {
+    margin-bottom: 2.5rem;
+  }
+
+  .partners-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .partners-category-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .partners-category-title i {
+    font-size: 0.9rem;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .partner-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .partner-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+  }
+
+  .partner-card h4 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .partner-card .partner-role {
+    font-size: 0.82rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .partner-card p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .partner-card .partner-people {
+    font-size: 0.85rem;
+    color: var(--muted-text-color);
+    margin-top: 0.6rem;
+    font-style: italic;
+  }
+
+  /* Tools Section */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  .tool-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.2rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .tool-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 12px 40px var(--primary-glow);
+    transform: translateY(-4px);
+  }
+
+  .tool-card h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .tool-card h3 i {
+    color: var(--primary-color);
+  }
+
+  .tool-card .tool-tagline {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .tool-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .tool-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .tool-card ul li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .tool-card ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+  }
+
+  .tool-combined {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--section-alt-bg) 100%);
+    border: 2px solid var(--primary-color);
+  }
+
+  .tool-combined h3 {
+    color: var(--primary-color);
+  }
+
+  /* Timeline */
+  .timeline {
+    margin-top: 2.5rem;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .timeline-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.6rem;
+    flex-grow: 1;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    border-color: var(--primary-color);
+    transform: translateX(4px);
+  }
+
+  .timeline-content h4 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-content .timeline-date {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Study Design Cards */
+  .study-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .study-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .study-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+  }
+
+  .study-card h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .study-card h3 i {
+    color: var(--primary-color);
+  }
+
+  .study-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .study-groups {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .study-group {
+    background: var(--stat-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.1rem;
+    text-align: center;
+  }
+
+  .study-group h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+  }
+
+  .study-group p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+
+  /* CTA Box */
+  .cta-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .cta-box h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-box p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-box .btn {
+    margin: 0 0.4rem;
+  }
+
+  .contact-line {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--muted-text-color);
+  }
+
+  .contact-line a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .contact-line a:hover {
+    text-decoration: underline;
+  }
+
+  /* Highlight Box */
+  .highlight-box {
+    background: var(--highlight-bg);
+    border-left: 5px solid var(--primary-color);
+    border-radius: 0 16px 16px 0;
+    padding: 1.8rem 2.2rem;
+    margin: 2rem 0;
+  }
+
+  .highlight-box p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .highlight-box strong {
+    color: var(--text-color);
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--nd-blue);
+    padding: 3rem 0 2rem;
+    border-top: 4px solid var(--nd-gold);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .footer-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-description {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--nd-gold);
+  }
+
+  .footer-legal {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+  }
+
+  .footer-legal a:hover {
+    color: var(--nd-gold);
+    text-decoration: underline;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .footer-nd-mark img {
+    width: 250px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-right {
+      align-items: flex-start;
+      margin-top: 1.5rem;
+    }
+    .footer-nd-mark img {
+      width: 200px;
+    }
+  }
+
+  /* Theme Toggle */
+  .theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--card-bg);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    cursor: pointer;
+    z-index: 200;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+
+  .theme-toggle i {
+    font-size: 1.3rem;
+    color: var(--text-color);
+  }
+
+  /* Link Pills */
+  .links-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.7rem 1.4rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .link-pill:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-glow);
+    transform: translateY(-2px);
+  }
+
+  .link-pill i {
+    font-size: 0.85rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .hero h1 { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+    .features-grid { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .study-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .study-groups { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 110px 0 60px; }
+    .hero h1 { font-size: 2.1rem; }
+    .section { padding: 60px 0; }
+    .section-title { font-size: 1.7rem; }
+    .hero-cta-row { flex-direction: column; align-items: flex-start; }
+    .container, .container-narrow { padding: 0 1.2rem; }
+    .nav-inner { padding: 0 1.2rem; }
+    .goals-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.75rem; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .stat-card { padding: 1.2rem 0.8rem; }
+    .stat-number { font-size: 1.8rem; }
+    .feature-card, .tool-card, .study-card { padding: 1.5rem; }
+    .cta-box { padding: 2rem 1.4rem; }
+    .study-groups { grid-template-columns: 1fr; }
+  }
+
+  /* Mobile Nav */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 99;
+    padding: 1rem 2rem 1.5rem;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .mobile-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav a:hover {
+    color: var(--primary-color);
+  }
+
+  .mobile-nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (hover: none) {
+    .feature-card:hover,
+    .tool-card:hover,
+    .goal-card:hover,
+    .stat-card:hover,
+    .partner-card:hover,
+    .timeline-content:hover,
+    .study-card:hover {
+      border-color: var(--border-color);
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ND Mobile Wordmark Bar -->
+<div class="nd-mark-mobile">
+  <a href="https://www.nd.edu/" target="_blank" rel="noopener">
+    <img src="https://static.nd.edu/images/brandbar/dept-nd-white@2x.png" alt="University of Notre Dame" />
+  </a>
+</div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="nav-brand" href="#">ICDC</a>
+      <ul class="nav-links">
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#approach">Our Approach</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#study">The Study</a></li>
+        <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+      </ul>
+    </div>
+    <a class="nd-mark" href="https://www.nd.edu/" target="_blank" rel="noopener" title="University of Notre Dame">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/University_of_Notre_Dame_seal_%282%29.svg" alt="University of Notre Dame" class="nd-mark-light" />
+    </a>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#problem" class="mobile-nav-link">The Problem</a>
+  <a href="#approach" class="mobile-nav-link">Our Approach</a>
+  <a href="#tools" class="mobile-nav-link">Tools</a>
+  <a href="#partners" class="mobile-nav-link">Partners</a>
+  <a href="#study" class="mobile-nav-link">The Study</a>
+  <a href="#contact" class="mobile-nav-link">Get Involved</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-tagline">A FIPSE-Funded National Initiative</div>
+      <h1>Integrating <em>Civil Discourse</em> into the Curriculum</h1>
+      <p class="hero-subtitle">
+        ICDC introduces a fundamentally new model for strengthening civil discourse in higher education by treating <strong>sound reasoning and civil dialogue</strong> not as separate pedagogical goals, but as <strong>interdependent cognitive skills that must be taught together</strong>.
+      </p>
+      <p class="hero-subtitle">
+        With support from FIPSE, we will implement this integrated approach on <strong>125 campuses</strong>&mdash;including R1 universities, HBCUs, community colleges, and civic institutes&mdash;reaching <strong>tens of thousands of students</strong> and training <strong>375 faculty members</strong> to reform General Education Requirements nationwide.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Partner with Us</a>
+        <a href="#approach" class="btn btn-outline"><i class="fas fa-lightbulb"></i> Learn More</a>
+      </div>
+    </div>
+    <a href="#problem" class="scroll-chevron" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- The Problem -->
+<section class="section section-alt" id="problem">
+  <div class="container">
+    <div class="section-label">The Challenge</div>
+    <h2 class="section-title">Why Civil Discourse Matters</h2>
+    <p class="section-desc">
+      In recent years, a rise in protest tactics has disrupted dialogue on U.S. college campuses. Controversial topics are discussed in an atmosphere of perceived&mdash;or real&mdash;violence. Traditional responses have fallen short of addressing the root causes.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-brain"></i></div>
+        <h3>The Critical Thinking Gap</h3>
+        <p>Nearly <strong>half of U.S. college graduates</strong> lack proficiency in critical thinking. This persistent deficit particularly affects first-generation, low-income, and underrepresented students who often lack the confidence to evaluate arguments constructively.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-comments"></i></div>
+        <h3>The Dialogue Disconnect</h3>
+        <p>Most discourse programs focus on encouraging students to talk across differences, but they rarely ensure students have the <strong>analytical tools needed to generate well-reasoned claims</strong> before entering conversation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-puzzle-piece"></i></div>
+        <h3>The Missing Link</h3>
+        <p>Critical-thinking curricula teach logic and argument analysis in isolation, <strong>without structured opportunities</strong> to practice applying those skills in live dialogue with those who hold opposing views.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-balance-scale"></i></div>
+        <h3>Epistemic Humility</h3>
+        <p>Students encounter polarized discourse and algorithmic echo chambers. Many learn to <strong>defend inherited views rather than evaluate evidence impartially</strong>, eroding their openness to revision and capacity for intellectual collaboration.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        <strong>The root causes of polarization are not just incivility</strong>, but the widespread inability to distinguish sound from unsound reasoning and to revise one's views in light of evidence. ICDC addresses both.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Our Approach -->
+<section class="section" id="approach">
+  <div class="container">
+    <div class="section-label">The Innovation</div>
+    <h2 class="section-title">Our Integrated Approach</h2>
+    <p class="section-desc">
+      ICDC's innovation is to <strong>link rigorous argument analysis and guided civil dialogue through validated pedagogies and AI-assisted tools</strong>, enabling students to form better arguments and then test those arguments responsibly in structured conversations.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card feature-card-full">
+        <div class="feature-icon accent"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Developing Intellectual Character</h3>
+        <p>Civil discourse instruction is most successful when clearly focused on forming the student's <strong>habits of mind</strong>. Our central objective is to cultivate two intellectual virtues: the <strong>confidence to think for oneself</strong>, and <strong>epistemic humility about what one knows and does not know</strong>. We do not aim to provide students with more information&mdash;we aim to develop their character.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family: 'Roboto Mono', monospace; font-size: 1.2rem; margin-top: 3rem; margin-bottom: 1.5rem;">Project Goals</h3>
+
+    <div class="goals-grid">
+      <div class="goal-card">
+        <div class="goal-number">1</div>
+        <div>
+          <h3>Scale Student Reach</h3>
+          <p>Enroll 95,064 students in the experiment, with 71,298 receiving intensive, targeted civil discourse education.</p>
+        </div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-number">2</div>
+        <div>
+          <h3>Train Faculty</h3>
+          <p>Train 375 faculty members to integrate civil discourse instruction into the curriculum across three summer workshops.</p>
+        </div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-number">3</div>
+        <div>
+          <h3>Rigorous Research</h3>
+          <p>Conduct a quasi-randomized controlled three-year longitudinal study testing the effectiveness of AI civil discourse tools.</p>
+        </div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-number">4</div>
+        <div>
+          <h3>Model Programs</h3>
+          <p>Create a model program in civil discourse reform on 125 college campuses across all sectors of higher education.</p>
+        </div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-number">5</div>
+        <div>
+          <h3>National Replication</h3>
+          <p>Produce a handbook and online hub to guide replication at institutions nationwide, including HBCUs and community colleges.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">125</div>
+        <div class="stat-label">Campus Partners</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">95K+</div>
+        <div class="stat-label">Students Reached</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">375</div>
+        <div class="stat-label">Faculty Trained</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Year Initiative</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Tools -->
+<section class="section section-alt" id="tools">
+  <div class="container">
+    <div class="section-label">Technology</div>
+    <h2 class="section-title">AI-Assisted Learning Tools</h2>
+    <p class="section-desc">
+      To speak in a civil way one must know how to reason in a fair way. ICDC leverages two innovative, proven platforms that together provide <strong>instruction in argument analysis</strong> and <strong>real-time practice in civil dialogue</strong>.
+    </p>
+
+    <div class="tools-grid">
+      <div class="tool-card">
+        <h3><i class="fas fa-sitemap"></i> thinkARGUMENTS</h3>
+        <div class="tool-tagline">Mastery Learning + Argument Mapping</div>
+        <p>An online asynchronous course centered on argument mapping&mdash;a research-backed framework for teaching students to analyze, visualize, and evaluate arguments with clarity, rigor, and intellectual humility.</p>
+        <ul>
+          <li>Guides students through 35+ reasoning skills</li>
+          <li>Automatic feedback until mastery is demonstrated</li>
+          <li>Proven 10-22% improvement in critical thinking</li>
+          <li>Used at 70+ colleges with 40,000+ users</li>
+          <li>93% faculty retention rate</li>
+        </ul>
+      </div>
+      <div class="tool-card">
+        <h3><i class="fas fa-comments"></i> Sway</h3>
+        <div class="tool-tagline">AI-Guided Civil Discourse Practice</div>
+        <p>A civil discourse practice community&mdash;an AI-supported platform proven to teach respectful dialogue about controversial issues by pairing students who disagree and facilitating their conversations in real time.</p>
+        <ul>
+          <li>Pairs students with opposing viewpoints</li>
+          <li>AI agent guides, prompts, and de-escalates</li>
+          <li>Won the 2024 Tools Competition (Post-Secondary)</li>
+          <li>80+ colleges, 8,000+ students</li>
+          <li>90% feel comfortable sharing sincere views</li>
+        </ul>
+      </div>
+      <div class="tool-card tool-combined">
+        <h3><i class="fas fa-link"></i> thinkARGUMENTS + Sway</h3>
+        <div class="tool-tagline">The Complete Civil Discourse Pedagogy</div>
+        <p>Together, these tools provide the foundation for ICDC's integrated approach: <strong>thinkARGUMENTS provides the instruction; Sway provides the lab.</strong> Students learn to decompose arguments, identify assumptions, and generate counterarguments&mdash;then practice applying those skills in real-time debates with peers who hold opposing views.</p>
+        <p style="margin-top: 1rem;">A new feature, <strong>ChatMaps</strong>, will create a real-time argument visualization bridge between thinkARGUMENTS's asynchronous instruction and Sway's synchronous dialogue practice.</p>
+      </div>
+    </div>
+
+    <div class="links-row">
+      <a href="https://www.swaybeta.ai" target="_blank" rel="noopener" class="link-pill">
+        <i class="fas fa-external-link-alt"></i> Try Sway
+      </a>
+      <a href="https://www.thinkeranalytix.org" target="_blank" rel="noopener" class="link-pill">
+        <i class="fas fa-external-link-alt"></i> ThinkerAnalytix
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section class="section" id="partners">
+  <div class="container">
+    <div class="section-label">Collaboration</div>
+    <h2 class="section-title">Our Partners</h2>
+    <p class="section-desc">
+      ICDC brings together <strong>Civic Institutes, leading universities, and proven nonprofits</strong> to create a national coalition capable of teaching civil discourse at scale and reforming General Education Requirements.
+    </p>
+
+    <div class="partners-section">
+      <div class="partners-category">
+        <div class="partners-category-title"><i class="fas fa-landmark"></i> Civic Institute Partner</div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <h4>School of Civic Life and Leadership (SCiLL)</h4>
+            <div class="partner-role">University of North Carolina-Chapel Hill</div>
+            <p>Nationally known for its comprehensive, university-wide initiative to rebuild civic literacy through integrated coursework, faculty development, and public programming.</p>
+            <div class="partner-people">John Rose, Ph.D.; Simon Cullen, Ph.D.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-category">
+        <div class="partners-category-title"><i class="fas fa-university"></i> University Partners</div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <h4>University of Notre Dame</h4>
+            <div class="partner-role">Lead Institution</div>
+            <p>Primary fiscal agent and grantee. Large private university with established civil discourse programs.</p>
+            <div class="partner-people">Paul Blaschko, Co-PI</div>
+          </div>
+          <div class="partner-card">
+            <h4>North Carolina State University</h4>
+            <div class="partner-role">Project Direction & Research</div>
+            <p>Land-Grant university leading the National Critical Thinking Initiative and thinkPACK program.</p>
+            <div class="partner-people">Gary Comstock, Co-PI & Director; Daniel Gruehn, Data Analyst</div>
+          </div>
+          <div class="partner-card">
+            <h4>University of Texas-Austin</h4>
+            <div class="partner-role">School of Civic Leadership</div>
+            <p>Large flagship university with established civic leadership programs.</p>
+            <div class="partner-people">Reid Comstock, Assistant Professor</div>
+          </div>
+          <div class="partner-card">
+            <h4>Harvard University</h4>
+            <div class="partner-role">Philosophy Faculty Partner</div>
+            <p>Elite private university contributing philosophical expertise to the initiative.</p>
+            <div class="partner-people">Ned Hall, Professor of Philosophy</div>
+          </div>
+          <div class="partner-card">
+            <h4>Edward Waters University</h4>
+            <div class="partner-role">HBCU Partner</div>
+            <p>Historically Black university ensuring representation and reach to underserved communities.</p>
+            <div class="partner-people">Todd DeRose, Assistant Professor</div>
+          </div>
+          <div class="partner-card">
+            <h4>Camden County College</h4>
+            <div class="partner-role">Community College Partner</div>
+            <p>Two-year institution ensuring the model works across all sectors of higher education.</p>
+            <div class="partner-people">David Slakter, Assistant Professor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-category">
+        <div class="partners-category-title"><i class="fas fa-handshake"></i> Nonprofit Partners</div>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <h4>ThinkerAnalytix</h4>
+            <div class="partner-role">Critical Thinking Curriculum</div>
+            <p>Develops and maintains thinkARGUMENTS, providing scalable instruction in argument mapping and critical thinking.</p>
+            <div class="partner-people">Aidan Kestigian; Anne L'Hommedieu Sanderson</div>
+          </div>
+          <div class="partner-card">
+            <h4>Disagree Wisely</h4>
+            <div class="partner-role">Civil Discourse Platform</div>
+            <p>Provides and supports Sway, the AI-assisted platform for practicing civil dialogue across disagreement.</p>
+            <div class="partner-people">Simon Cullen, Co-Founder & CEO; Nicholas DiBella, Co-Founder & CTOO</div>
+          </div>
+          <div class="partner-card">
+            <h4>Heterodox Academy</h4>
+            <div class="partner-role">Network & Support</div>
+            <p>Provides broader network support and helps promote viewpoint diversity in higher education.</p>
+            <div class="partner-people">Michael Regnier, Executive Director</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Study -->
+<section class="section section-alt" id="study">
+  <div class="container">
+    <div class="section-label">Research</div>
+    <h2 class="section-title">Longitudinal Study Design</h2>
+    <p class="section-desc">
+      ICDC will conduct a large, three-year longitudinal study measuring the effectiveness of training faculty to integrate civil discourse and critical thinking into required courses at scale.
+    </p>
+
+    <div class="study-grid">
+      <div class="study-card">
+        <h3><i class="fas fa-users"></i> Participant Structure</h3>
+        <p>Teams of three faculty "Civil Discourse Fellows" from each of 125 institutions will participate in summer workshops, then implement the program reaching 34 students per treatment group, per Fellow, per year.</p>
+      </div>
+      <div class="study-card">
+        <h3><i class="fas fa-flask"></i> Quasi-Randomized Design</h3>
+        <p>Four treatment groups enable rigorous comparison: Control, Sway-only, thinkARGUMENTS-only, and thinkARGUMENTS + Sway combined. Staggered rollout enables difference-in-differences analysis.</p>
+      </div>
+      <div class="study-card">
+        <h3><i class="fas fa-chart-line"></i> Outcome Measures</h3>
+        <p>Primary outcomes include CRIT (Critical Reasoning and Inference Test) scores, thinkARGUMENTS mastery checks, and Sway dialogue analysis measuring clarity, accuracy, and belief-updating.</p>
+      </div>
+      <div class="study-card">
+        <h3><i class="fas fa-clock"></i> Three-Year Tracking</h3>
+        <p>Students complete CRIT at entry, end of semester, and graduation&mdash;enabling measurement of long-term retention and transfer of civil discourse skills beyond the intervention period.</p>
+      </div>
+    </div>
+
+    <h4 style="font-family: 'Roboto Mono', monospace; font-size: 1rem; margin-top: 2.5rem; margin-bottom: 1rem;">Study Groups</h4>
+    <div class="study-groups">
+      <div class="study-group">
+        <h4>Group A</h4>
+        <p>Control<br/>(No intervention)</p>
+      </div>
+      <div class="study-group">
+        <h4>Group B</h4>
+        <p>Sway Only<br/>(Dialogue practice)</p>
+      </div>
+      <div class="study-group">
+        <h4>Group C</h4>
+        <p>thinkARGUMENTS Only<br/>(Reasoning instruction)</p>
+      </div>
+      <div class="study-group">
+        <h4>Group D</h4>
+        <p>TA + Sway<br/>(Integrated approach)</p>
+      </div>
+    </div>
+
+    <h3 style="font-family: 'Roboto Mono', monospace; font-size: 1.2rem; margin-top: 3rem; margin-bottom: 1.5rem;">Project Timeline</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">Y1</div>
+        <div class="timeline-content">
+          <h4>Planning & Development</h4>
+          <div class="timeline-date">January - December 2026</div>
+          <p>Initial planning, workshop design, Call for Applications, and development of the Foundations of American Democracy (FAD) course customization for thinkARGUMENTS.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">Y2</div>
+        <div class="timeline-content">
+          <h4>Workshop 1 at UNC-Chapel Hill</h4>
+          <div class="timeline-date">January - December 2027</div>
+          <p>First summer workshop at SCiLL with ~100 Fellows (33 campus teams). Cohort 1 begins implementation, enrolling first students in the study.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">Y3</div>
+        <div class="timeline-content">
+          <h4>Workshop 2 at Civic Institute TBD</h4>
+          <div class="timeline-date">January - December 2028</div>
+          <p>Second workshop with ~125 Fellows (42 campus teams). Cohorts 1 and 2 implementing. Data analysis begins.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">Y4</div>
+        <div class="timeline-content">
+          <h4>Workshop 3 & Synthesis</h4>
+          <div class="timeline-date">January - December 2029</div>
+          <p>Final workshop with ~150 Fellows (50 campus teams). All cohorts active. Final data collection, analysis, publications, and dissemination of handbook and online hub.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Expected Impact -->
+<section class="section" id="impact">
+  <div class="container">
+    <div class="section-label">Outcomes</div>
+    <h2 class="section-title">Expected Impact</h2>
+    <p class="section-desc">
+      The magnitude of outcomes likely to be attained by this effort is unprecedented. ICDC is on track to become <strong>the largest study of its kind</strong>.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-users"></i></div>
+        <h3>Immediate Reach</h3>
+        <p>Over 4 years, ICDC will engage more than <strong>70,000 students</strong> in civic discourse structured and led by <strong>375 faculty members</strong> at <strong>125 institutions</strong> across all sectors of higher education.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Long-Term Scale</h3>
+        <p>A conservative estimate of students reached over the next decade&mdash;even without renewed funding&mdash;is more than <strong>half a million undergraduates</strong>. With continued funding, we will reach <strong>millions of students</strong>.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-book"></i></div>
+        <h3>Curriculum Reform</h3>
+        <p>By building teams of Civil Discourse Fellows on each campus, we prompt a <strong>nationwide, faculty-led movement</strong> to reform General Education Requirements to include sound-reasoning-plus-dialogue pedagogy.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-database"></i></div>
+        <h3>Generalizable Knowledge</h3>
+        <p>The project will generate <strong>data, publications, and implementation tools</strong> freely available to other institutions, contributing to generalizable knowledge through multi-institution, multilevel, longitudinal study.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        ICDC promises to <strong>transform standard approaches to teaching civil discourse</strong> and dramatically improve student learning and achievement. Involving institutions from all sectors of higher education, the initiative will restore on a vast scale <strong>campus cultures where all individuals peacefully pursue the truth in the face of disagreement</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Get Involved -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-label">Join Us</div>
+    <h2 class="section-title">Get Involved</h2>
+    <p class="section-desc">
+      We are seeking partners to help bring ICDC to scale. Whether you represent a university, civic institute, or are a faculty member interested in becoming a Civil Discourse Fellow, we'd like to explore how we might work together.
+    </p>
+
+    <div class="features-grid" style="margin-bottom: 2rem;">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3>Faculty Fellows</h3>
+        <p>Apply to become a Civil Discourse Fellow. Attend a summer workshop, receive training in thinkARGUMENTS and Sway, and implement the program at your institution.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-university"></i></div>
+        <h3>Institution Partners</h3>
+        <p>Join our network of 125 campuses. We seek R1 universities, HBCUs, community colleges, and civic institutes committed to civil discourse reform.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-landmark"></i></div>
+        <h3>Civic Institutes</h3>
+        <p>Partner with us to host future workshops. We are seeking two additional Civic Institutes to join SCiLL in hosting Years 3 and 4 workshops.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+        <h3>Research Collaborators</h3>
+        <p>Contribute to the largest longitudinal study of civil discourse education. Access our data, instruments, and findings for independent replication.</p>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Ready to transform civil discourse education?</h3>
+      <p>Contact us to learn more about partnership opportunities, the Civil Discourse Fellows program, or how to bring ICDC's integrated approach to your campus.</p>
+      <a href="mailto:icdc@example.edu" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
+      <div class="contact-line">
+        <strong>Project Director:</strong> Gary Comstock, Ph.D. &mdash; North Carolina State University
+      </div>
+      <div class="contact-line" style="margin-top: 0.5rem;">
+        <strong>Co-PI:</strong> Paul Blaschko, Ph.D. &mdash; University of Notre Dame
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-title">Integrating Civil Discourse into the Curriculum</div>
+        <p class="footer-description">
+          A FIPSE-funded initiative led by the University of Notre Dame and North Carolina State University, in partnership with the School of Civic Life and Leadership at UNC-Chapel Hill, ThinkerAnalytix, Disagree Wisely, and Heterodox Academy.
+        </p>
+        <div class="footer-links">
+          <a href="#problem">The Problem</a>
+          <a href="#approach">Our Approach</a>
+          <a href="#tools">Tools</a>
+          <a href="#partners">Partners</a>
+          <a href="#study">The Study</a>
+          <a href="#contact">Get Involved</a>
+        </div>
+        <div class="footer-legal">
+          <a href="https://www.nd.edu/copyright/" target="_blank" rel="noopener">&copy; 2025</a> <a href="https://www.nd.edu/" target="_blank" rel="noopener">University of Notre Dame</a> &nbsp;|&nbsp;
+          <a href="https://www.nd.edu/about/accessibility/" target="_blank" rel="noopener">Accessibility</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <a href="https://www.nd.edu/" target="_blank" rel="noopener" class="footer-nd-mark">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/University_of_Notre_Dame_seal_%282%29.svg" alt="University of Notre Dame" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Theme Toggle -->
+<div class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">
+  <i class="fas fa-sun"></i>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  const icon = toggle.querySelector('i');
+  const saved = localStorage.getItem('icdc-theme') || 'dark';
+
+  function setTheme(mode) {
+    if (mode === 'light') {
+      document.documentElement.classList.remove('dark-mode');
+      document.documentElement.classList.add('light-mode');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    } else {
+      document.documentElement.classList.remove('light-mode');
+      document.documentElement.classList.add('dark-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+    localStorage.setItem('icdc-theme', mode);
+  }
+
+  setTheme(saved);
+
+  toggle.addEventListener('click', function() {
+    const isLight = document.documentElement.classList.contains('light-mode');
+    setTheme(isLight ? 'dark' : 'light');
+  });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  const menuIcon = menuBtn.querySelector('i');
+
+  menuBtn.addEventListener('click', function() {
+    const isOpen = mobileNav.classList.toggle('open');
+    menuIcon.classList.toggle('fa-bars', !isOpen);
+    menuIcon.classList.toggle('fa-times', isOpen);
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('open');
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars');
+    });
+  });
+
+  // Animate elements on scroll
+  const animationObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        animationObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.feature-card, .goal-card, .stat-card, .tool-card, .partner-card, .study-card, .timeline-item, .cta-box, .highlight-box').forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    animationObserver.observe(el);
+  });
+
+  // Scroll spy for navigation
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a[href^="#"]');
+
+  // Map section IDs to their nav links (handle impact -> contact mapping)
+  function getNavSelector(sectionId) {
+    // Impact section should highlight the contact nav item since impact isn't in nav
+    if (sectionId === 'impact') return 'contact';
+    return sectionId;
+  }
+
+  function setActiveLink(sectionId) {
+    const targetId = getNavSelector(sectionId);
+
+    // Update desktop nav
+    navLinks.forEach(function(link) {
+      const href = link.getAttribute('href');
+      if (href === '#' + targetId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Update mobile nav
+    mobileNavLinks.forEach(function(link) {
+      const href = link.getAttribute('href');
+      if (href === '#' + targetId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Use IntersectionObserver for scroll spy
+  // We want to detect when a section enters the top portion of the viewport
+  const scrollSpyObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        setActiveLink(entry.target.id);
+      }
+    });
+  }, {
+    // Trigger when section crosses 20% from the top of viewport
+    rootMargin: '-20% 0px -75% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(function(section) {
+    scrollSpyObserver.observe(section);
+  });
+
+  // Also handle the hero section (when at top, no nav item should be active)
+  const heroSection = document.querySelector('.hero');
+  const heroObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        // When hero is mostly visible, clear all active states
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+        });
+        mobileNavLinks.forEach(function(link) {
+          link.classList.remove('active');
+        });
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  if (heroSection) {
+    heroObserver.observe(heroSection);
+  }
+
+  // Handle click on nav links - set active immediately for better UX
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        navLinks.forEach(function(l) { l.classList.remove('active'); });
+        this.classList.add('active');
+      }
+    });
+  });
+
+  mobileNavLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        mobileNavLinks.forEach(function(l) { l.classList.remove('active'); });
+        this.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
